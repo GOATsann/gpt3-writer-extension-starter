@@ -13,8 +13,5 @@
     "default_popup": "index.html",
     "default_title": "Generate facial texpression"
   },
-  "background": {
-    "service_worker": "scripts/contextMenuServiceWorker.js"
-  },
   "permissions": ["contextMenus", "tabs", "storage"]
 }
