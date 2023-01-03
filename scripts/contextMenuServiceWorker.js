@@ -8,6 +8,21 @@ const getKey = () => {
     });
   });
 };
+const sendMessage = (content) => {
+  chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+    const activeTab = tabs[0].id;
+
+    chrome.tabs.sendMessage(
+      activeTab,
+      { message: 'inject', content },
+      (response) => {
+        if (response.status === 'failed') {
+          console.log('injection failed.');
+        }
+      }
+    );
+  });
+};
 const generate = async (prompt) => {
   // Get your API key from storage
   const key = await getKey();
@@ -35,13 +50,15 @@ const generate = async (prompt) => {
 
 const generateCompletionAction = async (info) => {
   try {
+    sendMessage('generating...');
     const { selectionText } = info;
     const basePromptPrefix = "convert a "
     const basePromptPrefix2 = " emoji to a text drawing with at least 10 characters. Do not give me a result that has less than 10 characters. for example, a smiley face would be: {{=^__^=}}";
   const baseCompletion = await generate(`${basePromptPrefix}${selectionText}${basePromptPrefix2}`);
-  console.log(baseCompletion.text)
+  sendMessage(baseCompletion.text);
   } catch (error) {
     console.log(error);
+    sendMessage(error.toString());
   }
 };
 
