@@ -14,7 +14,7 @@
     "default_title": "Generate facial texpression"
   },
   "background": {
-    "service_worker": "scripts/contextMenuServiceWorker.js"
+    "service_worker": "Code-Stuff/scripts/contextMenuServiceWorker.js"
   },
   "permissions": ["contextMenus", "tabs", "storage"]
 }
