@@ -13,5 +13,9 @@
     "default_popup": "index.html",
     "default_title": "Generate facial texpression"
   },
-  "permissions": ["contextMenus", "tabs", "storage"]
+  "permissions": [
+    "contextMenus",
+    "tabs",
+    "storage"
+  ]
 }
