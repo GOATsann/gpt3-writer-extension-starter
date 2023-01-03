@@ -9,6 +9,9 @@ const checkForKey = () => {
   document
     .getElementById('change_key_button')
     .addEventListener('click', changeKey);
+    const encode = (input) => {
+        return btoa(input);
+    };
     const saveKey = () => {
       const input = document.getElementById('key_input');
     
@@ -29,9 +32,6 @@ const checkForKey = () => {
   const changeKey = () => {
       document.getElementById('key_needed').style.display = 'block';
       document.getElementById('key_entered').style.display = 'none';
-  };
-  const encode = (input) => {
-      return btoa(input);
   };
   document.getElementById('save_key_button').addEventListener('click', saveKey);
   document
