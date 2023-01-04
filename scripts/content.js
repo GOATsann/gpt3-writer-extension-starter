@@ -1,6 +1,6 @@
 const insert = (content) => {
 // Find Calmly editor input section
-const elements = document.getElementsByClassName('droid');
+const elements = document.getElementsByClassName('add deez');
 
 if (elements.length === 0) {
   return;
