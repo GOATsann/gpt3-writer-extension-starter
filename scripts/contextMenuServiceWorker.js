@@ -52,7 +52,7 @@ const generateCompletionAction = async (info) => {
     sendMessage('generating...');
     const { selectionText } = info;
     const basePromptPrefix = "convert a "
-    const basePromptPrefix2 = " emoji to a text drawing with at least 10 characters. Do not give me a result that has less than 10 characters. for example, a smiley face would be: {{=^__^=}}";
+    const basePromptPrefix2 = " emoji to a text drawing with at least 10 characters. Do not give me a result that has less than 10 characters. for example, a smiley face would be: {{=^__^=}}:";
   const baseCompletion = await generate(`${basePromptPrefix}${selectionText}${basePromptPrefix2}`);
   sendMessage(baseCompletion.text);
   } catch (error) {

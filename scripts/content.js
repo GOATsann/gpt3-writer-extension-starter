@@ -10,7 +10,7 @@ const element = elements[0];
   const pToRemove = element.childNodes[0];
   pToRemove.remove();
   // Split content by \n
-   const splitContent = content.split('\n');
+  const splitContent = content.split('\n');
   // Wrap in p tags
   splitContent.forEach((content) => {
     const p = document.createElement('p');
