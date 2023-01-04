@@ -1,6 +1,6 @@
 const insert = (content) => {
 // Find Calmly editor input section
-const elements = document.getElementsByClassName('markup-eYLPri editor-H2NA06 slateTextArea-27tjG0 fontSize16Padding-XoMpjI');
+const elements = document.getElementsByClassName('droid');
 
 if (elements.length === 0) {
   return;
